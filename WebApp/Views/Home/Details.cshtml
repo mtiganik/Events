@@ -1,0 +1,43 @@
+﻿@using Domain;
+@model Tuple<Event,Participant>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(tuple => tuple.Item1.EventName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.EventName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(tuple => tuple.Item1.EventStartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.EventStartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(tuple => tuple.Item1.EventLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.EventLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(tuple => tuple.Item1.EventInformation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.EventInformation)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Tagasi</a>
+    @*<a asp-action="Edit" asp-route-id="@Html.IdFor(tuple => tuple.Item1.EventId)">Edit</a>*@
+</div>

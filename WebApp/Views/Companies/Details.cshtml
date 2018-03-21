@@ -1,0 +1,54 @@
+﻿@model Domain.Company
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Company</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyRegistrationNr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompanyRegistrationNr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyPaymentMehtod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompanyPaymentMehtod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfParticipants)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfParticipants)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyRequests)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompanyRequests)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ParticipantId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ParticipantId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CompanyId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

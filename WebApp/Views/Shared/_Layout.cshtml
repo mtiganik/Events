@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApp</title>
+    <style>
+        .navbar-top a {
+            float: left;
+            color: #565656;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            width: unset;
+        }
+
+            .navbar-top a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .navbar-top a.active {
+                background-color: #005AA1;
+                color: white;
+            }
+    </style>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+
+</head>
+<body style="background-color:#EEF2F5; padding-top:0px;">
+    <div class="container body-content navbar-top" style="background-color:white;">
+        <div class="row">
+            <div class="col-sm-3" >
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-nav navbar-brand" style="padding-top:0px"><img src="~/images/logo.svg"> </a>
+            </div>
+            <div class="col-sm-2" style="height:60px; font-size:16px; text-align:center; "><a asp-area="" asp-controller="Home" asp-action="Index" >AVALEHT</a></div>
+            <div class="col-sm-3" style="height:60px; font-size:16px; text-align:center;"><a asp-area="" asp-controller="Events" asp-action="Index">ÜRITUSTE&nbsp;LISAMINE</a></div>
+
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1" style="align-content:flex-end"><img src="~/images/symbol.svg" /></div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row" style="background-color:#555555; color:#A9A9A9; padding-top:20px; padding:30px;">
+                <div class="column">
+                    <p><h2>Curabitur</h2></p>
+                    <p>Emauris</p>
+                    <p>Kfringilla</p>
+                    <p>Oin magna sem</p>
+                    <p>Kelementum</p>
+                </div>
+                <div class="column">
+                    <p><h2>Fusce</h2></p>
+                    <p>Econsectetur</p>
+                    <p>Ksollicitudin</p>
+                    <p>Omvulputate</p>
+                    <p>Nunc fringilla tellu</p>
+                </div>
+                <div class="column">
+                    <p><h2>Kontakt</h2></p>
+                    <p><span style="font-weight:bold; color:#DCDCDC;">Peakontor: Tallinnas</span></p>
+                    <p>Väike-Ameerika 1, 11415 Tallinn</p>
+                    <p>Telefon: 605 4450</p>
+                    <p>Faks: 605 3155</p>
+                </div>
+                <div class="column">
+                    <p><h2><br /></h2> </p>
+                    <p><span style="font-weight:bold; color:#DCDCDC;">Harukontor: Võrus</span></p>
+                    <p>Oja tn 7 (külastusaadress)</p>
+                    <p>Telefon: 605 3330</p>
+                    <p>Faks: 605 3155</p>
+                </div>
+            </div>
+
+
+
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

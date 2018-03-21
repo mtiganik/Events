@@ -1,0 +1,95 @@
+﻿body {
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.content {
+    background-color: white;
+    border: 8px solid #EEF2F5;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.divbox-header {
+    padding: 10px 0 10px 0; 
+    background-color: blue;
+    text-align: center;
+    color: azure;
+    font-size: 18px;
+}
+
+.divbox-body {
+    padding: 5px 5px 25px 15px;
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+    .column p {
+        margin-top: 8px;
+        vertical-align: middle;
+    }
+        .column h2 {
+            color: #DCDCDC;
+        }
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+
+

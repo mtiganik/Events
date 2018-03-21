@@ -1,0 +1,64 @@
+﻿@model Domain.Company
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Company</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyRegistrationNr" class="control-label"></label>
+                <input asp-for="CompanyRegistrationNr" class="form-control" />
+                <span asp-validation-for="CompanyRegistrationNr" class="text-danger"></span>
+            </div>
+            @Html.LabelFor(model => model.CompanyPaymentMehtod, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CompanyPaymentMehtod, new SelectList(Enum.GetValues(typeof(PaymentMethod))))
+                @Html.ValidationMessageFor(model => model.CompanyPaymentMehtod, "", new { @class = "text-danger" })
+            </div>
+
+            @*<div class="form-group">
+                <label asp-for="CompanyPaymentMehtod" class="control-label"></label>
+                <select asp-for="CompanyPaymentMehtod" class="form-control"></select>
+                <span asp-validation-for="CompanyPaymentMehtod" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="NumberOfParticipants" class="control-label"></label>
+                <input asp-for="NumberOfParticipants" class="form-control" />
+                <span asp-validation-for="NumberOfParticipants" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyRequests" class="control-label"></label>
+                <input asp-for="CompanyRequests" class="form-control" />
+                <span asp-validation-for="CompanyRequests" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParticipantId" class="control-label"></label>
+                <input asp-for="ParticipantId" class="form-control" />
+                <span asp-validation-for="ParticipantId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

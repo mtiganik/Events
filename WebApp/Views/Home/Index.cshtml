@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Domain.Event>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" asp-append-version="true">
+
+</head>
+
+<div class="row">
+    <div class="col-sm-6 content">
+        <div class="divbox-header">Tulevased üritused</div>
+        <div class="divbox-body">
+            <table class="table">
+                <tbody>
+                    @foreach (var item in Model.Where(x=> x.EventStartDate > DateTime.Now))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventStartDate)
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.EventId">OSAVÕTJAD</a><a asp-action="Delete" asp-route-id="@item.EventId"><img src="~/images/remove.svg" /></a>
+                        </td>
+                    </tr>
+            }
+                </tbody>
+            </table>
+            <a asp-action="Create">LISA ÜRITUS</a>
+        </div>
+    </div>
+
+    <div class="col-sm-6 content">
+        <div class="divbox-header">Toimunud üritused</div>
+
+        <div class="divbox-body">
+            <table class="table">
+                <tbody>
+                    @foreach (var item in Model.Where(x => x.EventStartDate < DateTime.Now))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventName);
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventStartDate)
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.EventId">OSAVÕTJAD</a><a asp-action="Delete" asp-route-id="@item.EventId"><img src="~/images/remove.svg" /></a>
+                        </td>
+                    </tr>
+            }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
